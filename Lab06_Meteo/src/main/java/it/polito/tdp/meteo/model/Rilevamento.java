@@ -6,9 +6,9 @@ public class Rilevamento {
 	
 	private String localita;
 	private Date data;
-	private int umidita;
+	private double umidita;
 
-	public Rilevamento(String localita, Date data, int umidita) {
+	public Rilevamento(String localita, Date data, double umidita) {
 		this.localita = localita;
 		this.data = data;
 		this.umidita = umidita;
@@ -30,7 +30,7 @@ public class Rilevamento {
 		this.data = data;
 	}
 
-	public int getUmidita() {
+	public double getUmidita() {
 		return umidita;
 	}
 
@@ -45,7 +45,12 @@ public class Rilevamento {
 
 	@Override
 	public String toString() {
-		return String.valueOf(umidita);
+		StringBuilder sb = new StringBuilder();
+		sb.append(String.format("%-8s ",this.localita));
+		sb.append(String.format("%-12f ",this.umidita));
+		sb.append("\n");
+		return sb.toString();
+		
 	}
 
 	
